@@ -1,14 +1,19 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
+  <ion-toolbar color="primary">    
+    <ion-title>Faculdade</ion-title>
+    <button ion-button menuToggle> 
+      <ion-icon name="menu"></ion-icon>
+    </button>
+  </ion-toolbar>
 </ion-header>
-
 <ion-content padding>
-  The world is your oyster.
   <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v3">docs</a> will be your guide.
+    Seleciona no Menu o Curso
   </p>
+  <button ion-button block (click)="mostrarComponente()" color="dark">
+    Teste
+  </button>
 </ion-content>
+<ion-footer>
+    Adriel 
+</ion-footer>
