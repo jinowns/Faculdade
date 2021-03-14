@@ -1,12 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 
-/**
- * Generated class for the AdmPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -15,11 +9,52 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class AdmPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  //variavel declarada para informar os dados
+  user : string = '';
+
+  constructor(public navCtrl: NavController, 
+              public navParams: NavParams,
+              public alertCtrl: AlertController) 
+  {
+
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AdmPage');
+  }
+  mostrarAlert() 
+  {
+    let prompt = this.alertCtrl.create
+    ({
+      title: 'Adiciona sua informações',
+      message: "Digite seu E-mail",
+      inputs: 
+        [
+          {
+            name: 'nome',
+            placeholder: 'Nome'
+          },
+        ],
+        buttons: 
+        [
+          {
+            text: 'Cancelar',
+            handler: data => 
+            {
+              console.log('Clicou no Cancelar');
+            }
+          },
+          {
+            text: 'Enviar',
+            handler: data => 
+            {
+              this.user = 'Bem vindo ' + data.nome + '!';
+              console.log('Clicou no Entrar');
+            }
+          }
+        ]
+    });
+    prompt.present();
   }
 
 }

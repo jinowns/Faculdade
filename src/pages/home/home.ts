@@ -1,15 +1,25 @@
 import { Component } from '@angular/core';
-import { NavController} from 'ionic-angular';
+import { NavController, ToastController} from 'ionic-angular';
 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
-export class HomePage {
+export class HomePage 
+{
 
-  constructor(public navCtrl: NavController) 
+  constructor(public navCtrl: NavController,
+              public toastCtrl: ToastController) 
   {
-
+    
   }
-
+  presentToast() 
+  {
+    const toast = this.toastCtrl.create
+    ({
+      message: 'Seleciona materia',
+      duration: 3000
+    });
+    toast.present();
+  }
 }

@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { Alert, Nav, Platform } from 'ionic-angular';
+import { AlertController, Nav, Platform, ToastController, NavController, NavParams} from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
@@ -12,13 +12,19 @@ import { MedicinaPage } from '../pages/medicina/medicina';
 @Component({
   templateUrl: 'app.html'
 })
-export class MyApp {
+export class MyApp 
+{
   @ViewChild(Nav) nav: Nav;
   rootPage:any = HomePage;
 
+  //aray para o Menu
   pages: Array<{title: string, component: any}>
 
-  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) 
+  //construtor
+  constructor(platform: Platform, 
+              statusBar: StatusBar, 
+              splashScreen: SplashScreen,
+              public toastCtrl: ToastController)
   {
     platform.ready().then(() => 
     {
@@ -33,8 +39,15 @@ export class MyApp {
       { title : 'Medicina'      , component : MedicinaPage}
     ]
   }
+  //Metodos
+
   openPage(page: any): void
   {
     this.nav.push(page.component);
-  }
+    const toast = this.toastCtrl.create({
+      message: 'Curso Selecionado ' + page.title,
+      duration: 3000
+    });
+    toast.present();
+  }  
 }
