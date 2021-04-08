@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
+import { Component,ViewChild } from '@angular/core';
+import { IonicPage, NavController, NavParams, AlertController, Nav } from 'ionic-angular';
+import { LoginPage} from '../login/login';
 
 
 @IonicPage()
@@ -7,10 +8,14 @@ import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angu
   selector: 'page-adm',
   templateUrl: 'adm.html',
 })
-export class AdmPage {
+export class AdmPage 
+{
+  @ViewChild(Nav) nav: Nav;
 
   //variavel declarada para informar os dados
   user : string = '';
+  email: string = '';
+  telefone :string = '';
 
   constructor(public navCtrl: NavController, 
               public navParams: NavParams,
@@ -19,11 +24,13 @@ export class AdmPage {
 
   }
 
-  ionViewDidLoad() {
+  ionViewDidLoad() 
+  {
     console.log('ionViewDidLoad AdmPage');
   }
   mostrarAlert() 
   {
+    
     let prompt = this.alertCtrl.create
     ({
       title: 'Adiciona sua informações',
@@ -31,8 +38,12 @@ export class AdmPage {
       inputs: 
         [
           {
-            name: 'nome',
-            placeholder: 'Nome'
+            name: 'email',
+            placeholder: 'Email'
+          },
+          {
+            name: 'telefone',
+            placeholder: 'Telefone'
           },
         ],
         buttons: 
@@ -48,7 +59,9 @@ export class AdmPage {
             text: 'Enviar',
             handler: data => 
             {
-              this.user = 'Bem vindo ' + data.nome + '!';
+              this.user = 'Dados Informados !';
+              this.email = data.email;
+              this.telefone = data.telefone;
               console.log('Clicou no Entrar');
             }
           }
@@ -56,5 +69,11 @@ export class AdmPage {
     });
     prompt.present();
   }
+
+  //abrir Login
+  openLogin() : void
+  {
+    this.navCtrl.push(LoginPage)
+  }  
 
 }

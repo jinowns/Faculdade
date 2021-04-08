@@ -5,7 +5,29 @@
 </ion-header>
 
 <ion-content padding>
-  <button ion-button color="dark" (click)="mostrarAlert()"
-  round>Informe seus dados</button>
-  <p>{{user}}</p>
+  <p>Planejamento, gestão de pessoas, controle de operações, análise de mercado... 
+    Não é difícil perceber a dinâmica e a abrangência da área de Administração. Praticamente, 
+    todos os tipos de negócios envolvem trabalhos de um administrador. A Administração é uma das 
+    mais antigas áreas de atuação profissional e permanece sempre atual e em constante transformação 
+    em virtude da expansão dos mercados, da modernização dos sistemas de gestão e da dinâmica das atividades
+     que proporciona. Nesse sentido, um bom administrador necessita de uma formação abrangente e, ao mesmo tempo, 
+     que lhe proporcione conhecimentos capazes de colocá-lo em posição de destaque num mercado tão competitivo. 
+  </p>
+  <h4>
+    Tem interesse nesse curso click a baixo
+  </h4>
+  <p>
+    {{user}}
+    <br>
+    {{email}}
+    <br>
+    {{telefone}}
+    <br>
+    <button ion-button color="secondary" (click)="mostrarAlert()"round>
+      Informe seus dados
+    </button>
+  </p>
+  <button ion-button color="dark" (click)="openLogin()">
+    login
+  </button>
 </ion-content>

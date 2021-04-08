@@ -9,6 +9,7 @@ import { AdsPage } from '../pages/ads/ads';
 import { ContabilidadePage } from '../pages/contabilidade/contabilidade';
 import { DireitoPage } from '../pages/direito/direito';
 import { MedicinaPage } from '../pages/medicina/medicina';
+import { LoginPage} from '../pages/login/login';
 @Component({
   templateUrl: 'app.html'
 })
@@ -40,7 +41,6 @@ export class MyApp
     ]
   }
   //Metodos
-
   openPage(page: any): void
   {
     this.nav.push(page.component);
@@ -49,5 +49,6 @@ export class MyApp
       duration: 3000
     });
     toast.present();
-  }  
+  }
+
 }
