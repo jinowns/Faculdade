@@ -10,6 +10,7 @@ import { ContabilidadePage } from '../pages/contabilidade/contabilidade';
 import { DireitoPage } from '../pages/direito/direito';
 import { MedicinaPage } from '../pages/medicina/medicina';
 import { LoginPage} from '../pages/login/login';
+import { MapsPage} from '../pages/maps/maps';
 @Component({
   templateUrl: 'app.html'
 })
@@ -50,5 +51,4 @@ export class MyApp
     });
     toast.present();
   }
-
 }

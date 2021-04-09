@@ -13,6 +13,7 @@ import { ContabilidadePage } from '../pages/contabilidade/contabilidade';
 import { DireitoPage } from '../pages/direito/direito';
 import { MedicinaPage } from '../pages/medicina/medicina';
 import { LoginPage} from '../pages/login/login';
+import { MapsPage} from '../pages/maps/maps';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { LoginPage} from '../pages/login/login';
     ContabilidadePage,
     DireitoPage,
     MedicinaPage,
-    LoginPage
+    LoginPage,
+    MapsPage
   ],
   imports: [
     BrowserModule,
@@ -38,7 +40,8 @@ import { LoginPage} from '../pages/login/login';
     ContabilidadePage,
     DireitoPage,
     MedicinaPage,
-    LoginPage
+    LoginPage,
+    MapsPage
   ],
   providers: [
     StatusBar,

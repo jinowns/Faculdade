@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, ToastController} from 'ionic-angular';
 import { LoginPage } from '../login/login';
+import { MapsPage } from '../maps/maps';
 
 @Component({
   selector: 'page-home',
@@ -23,4 +24,9 @@ export class HomePage
     });
     toast.present();
   }
+
+  openMaps() : void
+  {
+    this.navCtrl.push(MapsPage)
+  }  
 }
